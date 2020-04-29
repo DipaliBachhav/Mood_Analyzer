@@ -5,15 +5,15 @@ public class MoodAnalyzerTest {
     @Test
     public void givenSadMessage_whenProper_shouldReturnSad()
     {
-        MoodAnalyzerMain analyzerMain = new MoodAnalyzerMain();
-        String mood=analyzerMain.moodAnalyzer("I Am In Sad Mood");
+        MoodAnalyzerMain analyzerMain = new MoodAnalyzerMain("I Am In Sad Mood");
+        String mood=analyzerMain.moodAnalyzer();
         Assert.assertEquals("SAD",mood);
     }
     @Test
     public void givenHappyMessage_whenProper_shouldReturnHappy()
     {
-        MoodAnalyzerMain analyzerMain = new MoodAnalyzerMain();
-        String mood=analyzerMain.moodAnalyzer("I Am In Any Mood");
+        MoodAnalyzerMain analyzerMain = new MoodAnalyzerMain("I Am In Happy  Mood");
+        String mood=analyzerMain.moodAnalyzer();
         Assert.assertEquals("HAPPY",mood);
     }
 
