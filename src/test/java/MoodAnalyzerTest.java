@@ -32,4 +32,33 @@ public class MoodAnalyzerTest {
         }
     }
 
+    @Test
+    public void givenMood_whenNull_shouldReturnCustomMessage()
+    {
+        MoodAnalyzerMain mood = new MoodAnalyzerMain();
+        try
+        {
+            mood.moodAnalyzer();
+        }
+        catch (MoodAnalyzeException e)
+        {
+            Assert.assertEquals(MoodAnalyzeException.ExceptionType.ENTERED_NULL,e.type);
+        }
+    }
+
+    @Test
+    public void givenMood_whenEmpty_shouldThrowException()
+    {
+        MoodAnalyzerMain mood = new MoodAnalyzerMain("");
+        try
+        {
+            mood.moodAnalyzer();
+        }
+        catch (MoodAnalyzeException e)
+        {
+            Assert.assertEquals(MoodAnalyzeException.ExceptionType.ENTERED_EMPTY,e.type);
+        }
+    }
+
+
 }
